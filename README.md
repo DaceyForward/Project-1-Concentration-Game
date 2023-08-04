@@ -2,7 +2,7 @@
 ### Summer Edition!!
 ![summer photo](https://i.imgur.com/MDDW9Mt.png)
 ### Overview
-Concentration is a simple game that will put your memory skills to the test! In this summer edition, all the images will represent different things we love to see in the summer. Examples could include popsicles, sunshine, flip-flops, swimsuits, and more!
+Concentration is a simple game that will put your memory skills to the test! In this summer edition, all the images will represent different things we love to see in the summer. Gameboard tile images could include popsicles, sunshine, flip-flops, swimsuits, and more!
 ###### Technology Used:
 - HTML5
 - CSS
@@ -53,7 +53,7 @@ font-family: 'Borel', cursive;
 ## Wireframe of the UI
 
 ![layout wireframe](https://i.imgur.com/JOErIyd.png)
-![layout wireframe](https://i.imgur.com/KBjKJb3.png)
+![layout wireframe](https://i.imgur.com/ZxDh74A.png)
 ![layout wireframe](https://i.imgur.com/ohwJPII.png)
 
 ### Pseudocode
