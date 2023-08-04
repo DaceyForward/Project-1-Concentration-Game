@@ -1,6 +1,6 @@
 # WELCOME TO THE GAME CONCENTRATION
 ### Summer Edition!!
-
+![summer photo](https://i.imgur.com/MDDW9Mt.png)
 ### Overview
 Concentration is a simple game that will put your memory skills to the test! In this summer edition, all the images will represent different things we love to see in the summer. Examples could include popsicles, sunshine, flip-flops, swimsuits, and more!
 ###### Technology Used:
