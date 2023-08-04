@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Borel', cursive;
+    height: 100vh;
+    margin: 0;
+}
+
+p {
+    background-image: url('https://i.imgur.com/hsoNkkd.png');
+}
+
+h1 {
+    color: darkgray;
+    font-size: 8vmin;
+    letter-spacing: 1vmin;
+    margin-bottom: -2vmin;
+    margin-top: 1vmin;
+}
+
+h2 {
+    color: lightgray;
+    font-size: 5vmin;
+    margin-top: -4vmin;
+    margin-bottom: -2vmin;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 200px 500px 200px;
+    margin-top: 3vmin;
+    margin-bottom: 2vmin;
+}
+
+#message {
+    text-align: center;
+    font-size: 3vmin;
+    color: rgb(255, 0, 89);
+}
+
+#score {
+    text-align: left;
+    color: white;
+    border: 0.1vmin solid #12CDD4;
+    background-color: #12CDD4;
+    border-radius: 2vmin;
+    font-size: 2vmin;
+    padding: 1vmin 0 0 1vmin;
+
+}
+
+#timer {
+    text-align: left;
+    color: grey;
+    border: 0.1vmin rgb(243, 243, 63);
+    background-color: rgb(243, 243, 63);
+    border-radius: 2vmin;
+    font-size: 2vmin;
+    padding: 1vmin 0 0 1vmin;
+}
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(6, 12vmin);
+    grid-template-rows: repeat(5, 12vmin);
+    gap: 3vmin;
+    margin-top: 2vmin;
+}
+
+.tiles>div {
+    transform: scale(0.7);
+    transition: transform 150ms ease-in;
+    background-color: lightgray;
+    margin: -3vmin;
+}
+
+.tiles>div:hover {
+    transform: scale(0.8);
+    transition: transform 150ms ease-in;
+    background-color: rgb(182, 182, 182);
+}
+
+button {
+    color: white;
+    border: 0.1vmin solid rgb(157, 244, 64);
+    background-color: rgb(157, 244, 64);
+    border-radius: 2vmin;
+    font-size: 3vmin;
+    margin-top: 1vmin;
+    margin-bottom: 2vmin;
+    font-family: 'Raleway', sans-serif;
+    padding: 1vmin;
+}
+
+button:hover {
+    color: greenyellow;
+    background-color: #12CDD4;
+    border: 0.1vmin solid rgb(31, 238, 220);
+    font-family: 'Raleway', sans-serif;
+}
+
+@media (min-width: 768px) {
+   all {
+
+   }
+}

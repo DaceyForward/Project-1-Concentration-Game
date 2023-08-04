@@ -1,4 +1,4 @@
-# WELCOME TO THE GAME CONCENTRATION
+# WELCOME TO THE GAME OF CONCENTRATION
 ### Summer Edition!!
 ![summer photo](https://i.imgur.com/MDDW9Mt.png)
 ### Overview
