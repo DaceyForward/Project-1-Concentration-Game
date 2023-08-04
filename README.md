@@ -40,20 +40,20 @@ the ability to choose between one player, player vs the computer, or two players
 
 ##### Font:
 ###### HTML Code
-```HTML 
+```html 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
 ```
 ###### CSS Code
-```CSS
+```css
 font-family: 'Borel', cursive;
 ```
 
 ## Wireframe of the UI
 
 ![layout wireframe](https://i.imgur.com/JOErIyd.png)
-![layout wireframe](https://i.imgur.com/50Tbjtw.png)
+![layout wireframe](https://i.imgur.com/KBjKJb3.png)
 ![layout wireframe](https://i.imgur.com/ohwJPII.png)
 
 ### Pseudocode
