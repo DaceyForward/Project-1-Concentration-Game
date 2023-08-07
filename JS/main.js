@@ -25,6 +25,8 @@ const tileImages = [
     {name: 'umbrella', image: 'tile images/image (14).png'}
 ]
 
+// const player = 'null'
+
 /*----- state variables -----*/
 // these are elements that WILL change through the course of the game
 // score, timer, images of the tiles, location of the tiles (shuffle)
@@ -70,7 +72,9 @@ const tileEls = [...document.querySelectorAll('.tiles > div')]
 // handleClick function
 
 init()
-
+// sets variables to default values to get the game started
+// want tiles to be all face down& grey
+// want score and timer starting at 0
 function init() {
     score = 0
     timer = 0
@@ -85,33 +89,79 @@ function init() {
     render()
 }
 
+// displays score on page
+// want to start at 0 and increase by 1 with each matching pair of images clicked
+// will not exceed 15
 function renderScore() {
 
 }
 
+// displays timer on page
+// want timer to start at 0 and begin timing when the first tile is clicked
+// want timer to stop when the last pair is matched (when the score = 15)
 function renderTimer() {
-
+    seconds += 1
+    //minutes logic
+    if (seconds >= 60) {
+        minutes += 1
+        seconds = 0
+    }
+    //format time before displaying
+    let secondsValue = seconds < 10 ? `0${seconds}` : seconds
+    let minutesValue = minutes < 10 ? `0${minutes}` : minutes
+    timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`
 }
 
+// displays all tiles face down until clickec
+// want tile to flip over to display the image when clicked, and stay on this side when another tile is clicked
+// if the two tiles are a match, tiles stay face up
+// if the two tiles are NOT a match, flip back to face down after 1 second
 function renderTiles() {
 
 }
 
+// displays play again button
+// want hidden until the score reached 15 (end of the game), then appear
+// when clicked, want to reset game and tiles turn face down and shuffle
+// want the timer and score to be reset back to 0
 function renderButton() {
     playAgainButton.style.visibility = winner ? 'visible' : 'hidden'
 }
 
-function render(){
+// displays message to player about game play
+// if player clicks on a matching pair of tiles, display "You got one!!"
+// if tiles clicked are not a match, display "Not a match. Try again!"
+// if all 15 matching pairs are clicked, display "YOU WIN!!!"
+function renderMessage() {
+    if () {
+        messageEl.innerText = "You got a match!!"
+    } else if () {
+        messageEl.innerText = "Not a match. Try Again!"
+    } else (score === 15) {
+        messageEl.innerText = "YOU WIN!!!"
+    }
+}
+
+//displays all elements with render functions attached (score, timer, tiles, button)
+function render() {
     renderScore()
     renderTimer()
     renderTiles()
     renderButton()
+    renderMessage()
 }
 
+// moves tiles around when play again button is clicked
+// (do I need to render this?)
+// want tiles to move to a new and random position when the play again button is clicked
 function shuffleTiles() {
-
+    
 }
 
+// when the player clicks on tiles or button
+// want tiles to flip over when clicked
+// when matching tiles display, want them to NOT be clickable
+// when the last pair is matched, want play again button to appear and be clickable - reseting game tiles, score, timer, and shuffling tiles
 function handleClick() {
 
 }
@@ -121,3 +171,5 @@ function handleClick() {
 /*----- event listeners -----*/
 // what events happen when buttons and tiles are clicked, what they should be attached to, and what functions they call
 // handleClick and button
+document.getElementById('.tiles').addEventListener('click', handleClick)
+playAgainButton.addEventListener('click', init)
