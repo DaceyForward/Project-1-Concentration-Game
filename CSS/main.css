@@ -9,25 +9,30 @@ body {
     font-family: 'Borel', cursive;
     height: 100vh;
     margin: 0;
+    background-image: url('https://i.imgur.com/SaNFb5v.png');
+    background-size: cover;
+    background-position: center;
 }
 
-p {
+/* p {
     background-image: url('https://i.imgur.com/hsoNkkd.png');
-}
+} */
 
 h1 {
-    color: darkgray;
+    color: rgb(250, 137, 25);
     font-size: 8vmin;
     letter-spacing: 1vmin;
     margin-bottom: -2vmin;
     margin-top: 1vmin;
+    text-shadow: 2px 2px #abaaaa;
 }
 
 h2 {
-    color: lightgray;
+    color: rgb(250, 203, 153);
     font-size: 5vmin;
     margin-top: -4vmin;
     margin-bottom: -2vmin;
+    text-shadow: 2px 2px #ffa136;
 }
 
 section {
@@ -40,7 +45,7 @@ section {
 #message {
     text-align: center;
     font-size: 3vmin;
-    color: rgb(255, 0, 89);
+    color: rgb(140, 140, 140);
 }
 
 #score {
@@ -51,6 +56,7 @@ section {
     border-radius: 2vmin;
     font-size: 2vmin;
     padding: 1vmin 0 0 1vmin;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -62,6 +68,7 @@ section {
     border-radius: 2vmin;
     font-size: 2vmin;
     padding: 1vmin 0 0 1vmin;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tiles {
@@ -69,14 +76,21 @@ section {
     grid-template-columns: repeat(6, 12vmin);
     grid-template-rows: repeat(5, 12vmin);
     gap: 3vmin;
-    margin-top: 2vmin;
+    margin-top: 1vmin;
 }
 
 .tiles>div {
     transform: scale(0.7);
     transition: transform 150ms ease-in;
-    background-color: lightgray;
+    background-color: rgb(218, 218, 218);
     margin: -3vmin;
+    color: white;
+    font-size: 18vmin;
+    text-align: center;
+    line-height: 1.8;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tiles>div:hover {
@@ -92,9 +106,10 @@ button {
     border-radius: 2vmin;
     font-size: 3vmin;
     margin-top: 1vmin;
-    margin-bottom: 2vmin;
+    margin-bottom: 1vmin;
     font-family: 'Raleway', sans-serif;
     padding: 1vmin;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 button:hover {
