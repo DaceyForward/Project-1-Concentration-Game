@@ -71,7 +71,7 @@ section {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.tiles {
+#tiles {
     display: grid;
     grid-template-columns: repeat(6, 12vmin);
     grid-template-rows: repeat(5, 12vmin);
@@ -79,7 +79,7 @@ section {
     margin-top: 1vmin;
 }
 
-.tiles>div {
+#tiles>div {
     transform: scale(0.7);
     transition: transform 150ms ease-in;
     background-color: rgb(218, 218, 218);
@@ -93,7 +93,7 @@ section {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.tiles>div:hover {
+#tiles>div:hover {
     transform: scale(0.8);
     transition: transform 150ms ease-in;
     background-color: rgb(182, 182, 182);
