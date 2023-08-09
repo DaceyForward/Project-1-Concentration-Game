@@ -82,7 +82,7 @@ section {
 #tiles>div {
     transform: scale(0.7);
     transition: transform 150ms ease-in;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(225, 225, 225);
     margin: -3vmin;
     color: white;
     font-size: 18vmin;

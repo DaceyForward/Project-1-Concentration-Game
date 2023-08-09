@@ -76,7 +76,9 @@ const board = [...document.querySelectorAll('#tiles > div')]
 
 // event listeners ------------------------------------
 
-document.getElementById('tile2').addEventListener('click', handleClick)
+//document.getElementById('tile2').addEventListener('click', handleClick)
+
+document.getElementById('tiles').addEventListener('click', handleClick)
 
 playAgainButton.addEventListener('click', init)
 
@@ -88,10 +90,28 @@ init()
 
 function init() {
   imageLocation = []
-  tileClicked = false // array
-  tileMatched = false // array
+  tileClicked = [
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false
+  ]
+  tileMatched = [
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false
+  ]
   //tileRandomOrder = []
-  tileFaceUp = false // array
+  tileFaceUp = [
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false,
+    false, false, false, false, false, false
+  ]
   score = 0
   //timer = [0,0]
   timer = 0
@@ -155,16 +175,32 @@ function renderBoard() {
     // board.innerHTML = document.getElementById()
     // document.querySelector('#tile1').innerHTML = 'beachball'
     let idx = 0
+   //console.log('renderBoard tileFaceUp array', tileFaceUp) // added 12:50
+    //console.log('test') // added 12:50
     tileFaceUpImages.forEach(function(image) {
-        let images = document.createElement('img')
-        images.src = tileFaceUpImages[idx].image
-        images.style.width = '18vmin'
-        images.style.height = '18vmin'
-        idx += 1
-        document.querySelector(`#tile${idx}`).appendChild(images)
-        //board.style.visibility = ('click') ? 'visible' : 'hidden'
+       // console.log('array changes to true when clicked', tileFaceUp)
+       //console.log('renderBoard tileFaceUp array at index', idx, ' ', tileFaceUp[idx])
+        // console.log('array at index 0', tileFaceUp[0])
+        if (tileFaceUp[idx] === true) {
+            console.log('bananas')
+            let images = document.createElement('img')
+            images.src = tileFaceUpImages[idx].image
+            images.style.width = '18vmin'
+            images.style.height = '18vmin'
+            idx += 1
+            document.querySelector(`#tile${idx}`).appendChild(images) 
+            //return image
+        }
+        //idx += 1
+        // let images = document.createElement('img')
+        // images.src = tileFaceUpImages[idx].image
+        // images.style.width = '18vmin'
+        // images.style.height = '18vmin'
+        // idx += 1
+        // document.querySelector(`#tile${idx}`).appendChild(images)
+        
     })
-    //board.style.visibility = ('click') ? 'visible' : 'hidden'
+    
     // let beachballImg = document.createElement('img')
     // beachballImg.src = 'tile_images/beachball.png'
     // beachballImg.style.width = '18vmin'
@@ -185,7 +221,21 @@ function render() {
 // other functions ------------------------------------
 
 function handleClick(event) {
+   //let idx = 0
+    const idx = board.indexOf(event.target)
+        console.log('index at click', idx)
+    tileFaceUp[idx] = true
+    //console.log('handleclick tileFaceUp array', tileFaceUp) //added 12:50
     
+    // tileFaceUpImages.forEach(function(event) {
+    //     const idx = board.indexOf(event.target)
+    //     tileFaceUp[idx] = false
+
+    // })
+    //console.log('inside handleclick', tileFaceUp)
+        // if (idx === true) {
+        //     return 
+        // }
   
     // const tile2 = board.indexOf(event.target)
     // let beachballImg = document.createElement('img')
@@ -193,7 +243,6 @@ function handleClick(event) {
     // beachballImg.style.width = '18vmin'
     // beachballImg.style.height = '18vmin'
     // document.querySelector('#tile2').appendChild(beachballImg)
-  //console.log('inside handleClick function. cellId clicked', tileId)
-  //   if 
-
+    
+    render() //added 12:50
 }
