@@ -149,7 +149,7 @@ function renderButton() {
     playAgainButton.style.visibility = (score === 15) ? 'visible' : 'hidden'
 }
 
-console.log(tileFaceUpImages[0].image)
+//console.log(tileFaceUpImages[0].image)
 
 function renderBoard() {
     // board.innerHTML = document.getElementById()
@@ -160,13 +160,11 @@ function renderBoard() {
         images.src = tileFaceUpImages[idx].image
         images.style.width = '18vmin'
         images.style.height = '18vmin'
-        //const tileId = `tile${idx}`
         idx += 1
         document.querySelector(`#tile${idx}`).appendChild(images)
-        //document.querySelector('#tiles').appendChild(images)
-        // idx += 1
+        //board.style.visibility = ('click') ? 'visible' : 'hidden'
     })
-    
+    //board.style.visibility = ('click') ? 'visible' : 'hidden'
     // let beachballImg = document.createElement('img')
     // beachballImg.src = 'tile_images/beachball.png'
     // beachballImg.style.width = '18vmin'
@@ -187,7 +185,9 @@ function render() {
 // other functions ------------------------------------
 
 function handleClick(event) {
-  // const tile2 = board.indexOf(event.target)
+    
+  
+    // const tile2 = board.indexOf(event.target)
     // let beachballImg = document.createElement('img')
     // beachballImg.src = 'tile_images/beachball.png'
     // beachballImg.style.width = '18vmin'
