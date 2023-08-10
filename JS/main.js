@@ -186,34 +186,30 @@ function renderButton() {
 function renderBoard() {
     let idx = 0
     console.log('renderBoard tileClicked array', tileClicked) // added 12:50
+    
     imageSet.forEach(function(image) {
         let images = document.createElement('img')
         images.src = imageSet[idx].image
         images.style.width = '18vmin'
         images.style.height = '18vmin'
+        
         if (tileClicked[idx] === true) {
             console.log('bananas')
-            //tileClicked[idx] = true
-            // let images = document.createElement('img')
-            // images.src = imageSet[idx].image
-            // images.style.width = '18vmin'
-            // images.style.height = '18vmin'
             document.getElementById(`tile${idx}`).appendChild(images) 
-            //console.log('renderBoard if stmt imageFaceUp array', imageFaceUp)
-            // console.log('tile clicked', tileClicked)
             tileClicked[idx] = false
-           // imageSet.style.visibility = (tileClicked === true) ? 'visible' : 'hidden'
-        }else if(imageFaceUp[idx] === true) {
+
+        } 
+        else if (imageFaceUp[idx] === true && imageMatched[idx] === false) {
             console.log('inside imageFaceUp[idx] else if. idx is', idx)
-        //     let images = document.createElement('img')
-        //     images.src = imageSet[idx].image
-        //     images.style.width = '18vmin'
-        //     images.style.height = '18vmin'
-        //     document.querySelector(`#tile${idx}`).appendChild(images)
-        console.log(images)    
-        // document.getElementById(`ile${idx}`).removeChild(images)
-        document.getElementById(`tile${idx}`).innerHTML = '' 
+            console.log(images) 
+            //wait(1000)
+            setTimeout(function() {
+                document.getElementById(`tile${idx}`).innerHTML = '' 
+            }, 1000)
+            console.log('waited 1 sec')
+            //document.getElementById(`tile${idx}`).innerHTML = '' 
         }
+
         idx += 1
         
     })
@@ -237,7 +233,7 @@ function handleClick(event) {
     tileClicked[idx] = true
     imageFaceUp[idx] = true
     console.log('handleclick imageFaceUp array', imageFaceUp) //added 12:50
-    console.log('name of clicked tile', imageSet[idx].name)
+    //console.log('name of clicked tile', imageSet[idx].name)
 
     if (firstClick === true) {
         firstClick = false
@@ -258,6 +254,8 @@ function handleClick(event) {
             score += 1
             message = 'You got a match!'
             console.log('**** MATCH! **** matchcheckeridx for match is ', matchCheckerIdx)
+            imageMatched[idx] = true
+            imageMatched[matchCheckerIdx] = true
         }
         //  } else if (imageSet[idx].name !== imageSet[matchCheckerIdx].match && imageFaceUp[matchCheckerIdx] === true) {
         //     //firstClick.style.backgroundColor = 'grey'
@@ -267,6 +265,7 @@ function handleClick(event) {
         // }
         matchCheckerIdx += 1
     })
+    console.log('IMAGE MATCHED ARRAY: ', imageMatched)
     // variable to determine if first click (general click) or second click (attempting a match)
     // if (firstClick === true) {
     //     firstClick = false
