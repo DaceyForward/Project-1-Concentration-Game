@@ -88,15 +88,6 @@ const playAgainButton = document.querySelector('button')
 
 const board = [...document.querySelectorAll('#tiles > div')]
 
-// event listeners -------------------------------------------------------------------------------------------------------------------------
-
-// what events happen when buttons and tiles are clicked, what they should be attached to, and what functions they call
-// handleClick and button
-
-document.getElementById('tiles').addEventListener('click', handleClick)
-
-playAgainButton.addEventListener('click', gameReset)
-
 // functions -------------------------------------------------------------------------------------------------------------------------------
 
 // make things start to happen in the background with functions
@@ -183,7 +174,7 @@ function gameReset() {
     
     score = 0
     
-    timer = 0
+    timer = '--'
     
     message = 'Click any tile to begin!!' 
     
@@ -346,3 +337,12 @@ function handleClick(event) {
    
     render() 
 }
+
+// event listeners -------------------------------------------------------------------------------------------------------------------------
+
+// what events happen when buttons and tiles are clicked, what they should be attached to, and what functions they call
+// handleClick and button
+
+document.getElementById('tiles').addEventListener('click', handleClick)
+
+playAgainButton.addEventListener('click', gameReset)
