@@ -117,41 +117,41 @@ init()
 
 function init() {
 
-  tileClicked = [
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false
-  ]
+    tileClicked = [
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false
+    ]
   
-  imageMatched = [
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false
-  ]
+    imageMatched = [
+       false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false
+    ]
 
-  imageFaceUp = [
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false,
-    false, false, false, false, false, false
-  ]
+    imageFaceUp = [
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false,
+        false, false, false, false, false, false
+    ]
   
-  score = 0
+    score = 0
 
-  timer = '--'
+    timer = '--'
 
-  message = 'Click any tile to begin!!' 
+    message = 'Click any tile to begin!!' 
 
-  button = 'visible'
+    button = 'visible'
 
-  render()
+    render()
 
-  firstClick = true
+    firstClick = true
 
 }
 
