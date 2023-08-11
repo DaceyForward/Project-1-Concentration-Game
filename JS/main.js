@@ -39,15 +39,11 @@ const tilesFaceDown = {
 
 // variables ------------------------------------
 
-let imageLocation
-
 let tileClicked
 
 let imageMatched
 
-//let tileRandomOrder
-
-let imageFaceUp  //for flip..
+let imageFaceUp  
 
 let score
 
@@ -59,28 +55,19 @@ let button
 
 let firstClick
 
-
-
 // cached elements ------------------------------------
 
 const scoreEl = document.querySelector('#score')
-    //console.log('this is the score element', scoreEl)
 
 const messageEl = document.querySelector('#message')
-    //console.log('this is the message element', messageEl)
 
 const timerEl = document.querySelector('#timer')
-    //console.log('this is the timer element', timerEl)
 
 const playAgainButton = document.querySelector('button')
-    //console.log('this is the button element', playAgainButton)
 
 const board = [...document.querySelectorAll('#tiles > div')]
-   //console.log('this is the tile element', tileEls)
 
 // event listeners ------------------------------------
-
-//document.getElementById('tile2').addEventListener('click', handleClick)
 
 document.getElementById('tiles').addEventListener('click', handleClick)
 
@@ -91,7 +78,7 @@ playAgainButton.addEventListener('click', gameReset)
 init()
 
 function init() {
-  //imageLocation = []
+ 
   tileClicked = [
     false, false, false, false, false, false,
     false, false, false, false, false, false,
@@ -106,7 +93,7 @@ function init() {
     false, false, false, false, false, false,
     false, false, false, false, false, false
   ]
-  //tileRandomOrder = []
+ 
   imageFaceUp = [
     false, false, false, false, false, false,
     false, false, false, false, false, false,
@@ -115,13 +102,10 @@ function init() {
     false, false, false, false, false, false
   ]
   score = 0
-  //timer = [0,0]
+
   timer = 0
   message = 'Click any tile to begin!!' 
   button = 'visible'
-
-//   firstClick = true
-
 
   render()
 
@@ -129,7 +113,7 @@ function init() {
 }
 
 function gameReset() {
-    console.log('game reset function')
+
     tileClicked = [
         false, false, false, false, false, false,
         false, false, false, false, false, false,
@@ -187,11 +171,10 @@ function renderButton() {
 }
 
 function renderBoard() {
-    console.log('inside renderboard. first click: ', firstClick)
-    console.log('image face up array at TOP of render board', imageFaceUp)
+
     //first click section
     if (firstClick === true) {
-        console.log('inside first click section in render board')
+
         message = 'Choose another tile.'
         renderMessage()
         let idx = 0
@@ -203,7 +186,7 @@ function renderBoard() {
             images.style.height = '18vmin'
             
             if (tileClicked[idx] === true) {
-                //console.log('bananas')
+
                 document.getElementById(`tile${idx}`).appendChild(images) 
                 tileClicked[idx] = false
             } 
@@ -215,7 +198,7 @@ function renderBoard() {
 
     //second click section
     else {
-        console.log('inside second section in render board')
+
         idx = 0
         imageSet.forEach(function(image) {
 
@@ -225,7 +208,7 @@ function renderBoard() {
             images.style.height = '18vmin'
             
             if (tileClicked[idx] === true) {
-                //console.log('bananas')
+
                 document.getElementById(`tile${idx}`).appendChild(images) 
                 tileClicked[idx] = false
             } 
@@ -235,7 +218,7 @@ function renderBoard() {
         setTimeout(function() {
             imageSet.forEach(function(image) {
                 if (imageFaceUp[idx] === true && imageMatched[idx] !== true) {
-                    console.log('inside render board match checker if statement')
+
                     document.getElementById(`tile${idx}`).innerHTML = '' 
                     imageFaceUp[idx] = false
                     message = 'Not a match. Try Again.'
@@ -245,44 +228,8 @@ function renderBoard() {
             })
 
             firstClick = true
-        }, 500)
+        }, 1000)
     }
-    console.log('image face up array at BOTTOM of render board', imageFaceUp)
-
-//setTimeout(function() {
-            //     console.log('waited 1 sec') 
-            // }, 1000)
-
-    // let idx = 0
-    // console.log('renderBoard tileClicked array', tileClicked) // added 12:50
-    
-    // imageSet.forEach(function(image) {
-
-    //     let images = document.createElement('img')
-    //     images.src = imageSet[idx].image
-    //     images.style.width = '18vmin'
-    //     images.style.height = '18vmin'
-        
-    //     if (tileClicked[idx] === true) {
-    //         console.log('bananas')
-    //         document.getElementById(`tile${idx}`).appendChild(images) 
-    //         tileClicked[idx] = false
-    //     } 
-    //     else if (imageFaceUp[idx] === true && imageMatched[idx] === false) {
-    //         console.log('inside imageFaceUp[idx] else if. idx is', idx)
-    //         document.getElementById(`tile${idx}`).innerHTML = '' 
-    //     }
-
-    //     // if (imageMatched[idx] === false) {
-    //     //     console.log('inside renderBoard imageMatched checker. imageMatched: ', imageMatched)
-    //     //     document.getElementById(`tile${idx}`).innerHTML = '' 
-    //     // }
-
-        // idx += 1
-        
-    // })
-    //console.log('renderBoard imageFaceUp array after forEach', tileClicked) 
-    
 }
 
 function render() {
@@ -297,29 +244,24 @@ function render() {
 
 function handleClick(event) {
     const idx = board.indexOf(event.target)
-    //let firstClick = true
-    console.log('index at click', idx)
+
     tileClicked[idx] = true
     imageFaceUp[idx] = true
-    console.log('handleclick imageFaceUp array', imageFaceUp)
-    //console.log('name of clicked tile', imageSet[idx].name)
-
     matchCheckerIdx = 0
-    //console.log('imageFaceUp array: ', imageFaceUp)
-    //console.log('ImageSet name: ', imageSet[idx].name)
+
     imageSet.forEach(function(image) {
 
         if (imageSet[idx].name === imageSet[matchCheckerIdx].match && imageFaceUp[matchCheckerIdx] === true) {
             score += 1
             message = 'You got a match!'
-            console.log('**** MATCH! **** matchcheckeridx for match is ', matchCheckerIdx)
+
             imageMatched[idx] = true
             imageMatched[matchCheckerIdx] = true
         } 
     
         matchCheckerIdx += 1
     })
-    console.log('IMAGE MATCHED ARRAY: ', imageMatched)
+
 
     if (score === 15) {
         message = 'YOU WIN!!!'
