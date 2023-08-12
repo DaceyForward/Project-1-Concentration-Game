@@ -228,7 +228,7 @@ function renderBoard() {
             })
 
             firstClick = true
-        }, 1000)
+        }, 750)
     }
 }
 
